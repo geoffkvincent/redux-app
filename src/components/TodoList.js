@@ -1,12 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Todo from './Todo'
 
 const TodoList = ({ todos }) => (
   <ul>
     {todos.map( t =>
-      <li key={t.id}>
-        {t.name}
-      </li>  
+      <Todo key={t.id} {...t} />
     )}
   </ul>
 )
