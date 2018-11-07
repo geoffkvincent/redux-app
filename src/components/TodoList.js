@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 
 const TodoList = ({ todos }) => (
   <ul>
-    {todos.map((t, i) =>
-      <li key={i.id}>
-        {t}
+    {todos.map( t =>
+      <li key={t.id}>
+        {t.name}
       </li>  
     )}
   </ul>
