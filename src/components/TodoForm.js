@@ -6,7 +6,11 @@ class TodoForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.dispatch({ type: 'ADD_TODO', todo: this.state.name})
+    const { dispatch, id } = this.props
+    const { name } = this.state
+    const todo = { name, id, complete: false } 
+    dispatch({ type: 'ADD_TODO', todo })
+    dispatch({ type: 'INC_ID' })
     this.setState({name: ''})
   }
 
