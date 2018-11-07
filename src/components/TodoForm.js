@@ -1,11 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 class TodoForm extends React.Component {
   state = { name: '' }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    //stuff
+
+    this.props.dispatch({ type: 'ADD_TODO', todo: this.state.name})
     this.setState({name: ''})
   }
 
@@ -30,4 +32,4 @@ class TodoForm extends React.Component {
   }
 }
 
-export default TodoForm
+export default connect()(TodoForm)
