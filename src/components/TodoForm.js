@@ -6,7 +6,6 @@ class TodoForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
     this.props.dispatch({ type: 'ADD_TODO', todo: this.state.name})
     this.setState({name: ''})
   }
@@ -32,4 +31,8 @@ class TodoForm extends React.Component {
   }
 }
 
-export default connect()(TodoForm)
+const mapStateToProps = (state) => {
+  return { id: state.nextId }
+}
+
+export default connect(mapStateToProps)(TodoForm)
