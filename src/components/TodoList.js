@@ -6,8 +6,8 @@ const filtered = (todos, activeFilter) => {
   switch(activeFilter) {
     case 'Active':
       return todos.filter(t => !t.complete)
-    case 'Complete':
-      return todos.filter(t => t.complete)
+    case 'Completed':
+      return todos.filter(t => t.completed)
     default:
       return todos
   }
