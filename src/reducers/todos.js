@@ -9,11 +9,11 @@ export const toggleTodo = (id) => {
   return { type: TOGGLE_TODO, id}
 }
 
-const todos = (state = [], action ) => {
+export default (state = [], action ) => {
   switch(action.type) {
-    case 'ADD_TODO':
+    case ADD_TODO:
       return [action.todo, ...state]
-    case 'TOGGLE_TODO':
+    case TOGGLE_TODO:
       return state.map( todo => {
         if (todo.id === action.id)
           return {...todo, complete: !todo.complete}
@@ -23,5 +23,3 @@ const todos = (state = [], action ) => {
       return state
   }
 }
-
-export default todos
