@@ -7,7 +7,7 @@ const filtered = (todos, activeFilter) => {
     case 'Active':
       return todos.filter(t => !t.complete)
     case 'Completed':
-      return todos.filter(t => t.completed)
+      return todos.filter(t => t.complete)
     default:
       return todos
   }
