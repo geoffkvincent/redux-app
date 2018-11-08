@@ -15,7 +15,7 @@ const filtered = (todos, activeFilter) => {
 
 const TodoList = ({ todos, activeFilter }) => (
   <ul>
-    {todos.map( t =>
+    { filtered(todos, activeFilter).map( t =>
       <Todo key={t.id} {...t} />
     )}
   </ul>
