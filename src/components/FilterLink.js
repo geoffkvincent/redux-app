@@ -27,7 +27,7 @@ const FilterLink = ({activeFilter, dispatch, children}) => {
 }
 
 const mapStateToProps = (state) => {
-  return { avtiveFilter: state.filter }
+  return { activeFilter: state.filter }
 }
 
 export default connect(mapStateToProps)(FilterLink)
