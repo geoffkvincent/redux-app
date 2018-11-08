@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const span = {
+const styles = {
   link: {
     textDecoration: 'underline',
     color: 'blue',
@@ -15,12 +15,14 @@ const FilterLink = ({activeFilter, dispatch, children}) => {
       <span>{children}</span>
     )
   } else {
-    <span
-      style={styles.link}
-      onClick={() => dispatch({ type: 'SET_FILTER', filter: children }) }
-    >
-      {children}
-    </span>
+    return (
+      <span
+        style={styles.link}
+        onClick={() => dispatch({ type: 'SET_FILTER', filter: children }) }
+      >
+        {children}
+      </span>
+    )
   } 
 }
 
