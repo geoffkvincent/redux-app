@@ -1,3 +1,8 @@
+const ADD_TODO = 'ADD_TODO'
+const TOGGLE_TODO = 'TOGGLE_TODO'
+
+
+
 const todos = (state = [], action ) => {
   switch(action.type) {
     case 'ADD_TODO':
